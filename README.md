@@ -8,7 +8,7 @@ An Antigravity / Google Gemini skill to transform, de-slop, and format F5 Suppor
 
 When authoring or rewriting F5 Knowledge Base articles with LLMs, three major problems typically occur:
 
-1. **The "Echo Chamber" Slop:** LLMs love to repeat the exact same point in the *Description*, the *Cause*, and again as a summary in *Additional Information*.
+1. **The "Echo Chamber" Slop:** LLMs repeat the exact same point in the *Description*, the *Cause*, and again as a summary in *Additional Information*.
 2. **Vague Environment Bullet Fillers:** LLMs add generic bullets like *"use case where catch-all DNS is needed"* or *"wildcard DNS handling"*.
 3. **The MyF5 Code-Block Rendering Glitch:** In MyF5 (Salesforce Lightning Knowledge), the CMS wraps any standard `<pre>` or `<code>` tag in a heavy, full-width boxed widget with copy buttons. This creates oversized, broken-looking visual boxes across the entire screen for simple CLI commands and inline text.
 
@@ -25,13 +25,32 @@ When authoring or rewriting F5 Knowledge Base articles with LLMs, three major pr
 
 ---
 
-## Installation
+## Installation Guide
 
-### Method 1: Global Installation in Antigravity / Google Gemini
+### Option 1: Web Browser / Google Gemini Enterprise (No Terminal Required)
 
-To install globally for your user profile across all projects and sessions:
+If you use the browser-based Gemini interface:
 
-1. Create the skill directory:
+1. **Download the Skill File:**
+   - Go to the [**Latest Release**](https://github.com/jesse-wahl/unslop-kb/releases/latest).
+   - Click on [`SKILL.md`](https://raw.githubusercontent.com/jesse-wahl/unslop-kb/main/SKILL.md) to download it to your computer (or right-click and choose **Save Link As...**).
+2. **Open Gemini in your browser:**
+   - Log into your Gemini Enterprise / F5 Gemini workspace.
+3. **Navigate to Skills:**
+   - In the left sidebar, click on **Skills**.
+4. **Upload the Skill:**
+   - Click the **`+`** (plus) icon at the top of the Skills panel.
+   - From the menu, select **Upload skill**.
+   - Choose the `SKILL.md` file you downloaded in Step 1.
+5. **Done!** The `unslop-kb` skill is now active and ready in your chat.
+
+---
+
+### Option 2: Command Line / Antigravity IDE (Global Config)
+
+To install globally via CLI across all local coding sessions:
+
+1. Create the skill folder:
    ```bash
    # Windows (PowerShell)
    mkdir -p "$HOME\.gemini\config\skills\unslop-kb"
@@ -40,13 +59,15 @@ To install globally for your user profile across all projects and sessions:
    mkdir -p ~/.gemini/config/skills/unslop-kb
    ```
 
-2. Copy the [`SKILL.md`](skills/unslop-kb/SKILL.md) file into that directory:
-   - **Windows:** `C:\Users\<username>\.gemini\config\skills\unslop-kb\SKILL.md`
+2. Copy [`SKILL.md`](SKILL.md) into that folder:
+   - **Windows:** `C:\Users\<your-user>\.gemini\config\skills\unslop-kb\SKILL.md`
    - **macOS / Linux:** `~/.gemini/config/skills/unslop-kb/SKILL.md`
 
-### Method 2: Project / Workspace Installation
+---
 
-If you prefer to include the skill directly in a shared repository or workspace:
+### Option 3: Workspace / Team Repository
+
+To include the skill directly inside a project repository for your entire team:
 
 1. Copy the skill to `.agents/skills/unslop-kb/SKILL.md` in your project root:
    ```bash
